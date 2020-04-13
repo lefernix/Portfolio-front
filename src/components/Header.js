@@ -1,7 +1,4 @@
-import { Link } from "gatsby"
 import React, { useState } from "react"
-import headstyle from "./Header.module.css"
-import logoan from "../../images/logoan.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
@@ -14,8 +11,6 @@ const Header = () => {
           <div className="logo">
             <a
               href="/"
-              activeClassName={headstyle.linkActive}
-              className={headstyle.link}
             >
               logo
             </a>
@@ -23,9 +18,9 @@ const Header = () => {
           <nav className="navigation">
             <button type="button" onClick={() => setHandleMenu(!handleMenu)}>
               {!handleMenu ? (
-                <FontAwesomeIcon icon={faBars} className={headstyle.icons} />
+                <FontAwesomeIcon icon={faBars} />
               ) : (
-                <FontAwesomeIcon icon={faTimes} className={headstyle.icons} />
+                <FontAwesomeIcon icon={faTimes} />
               )}
             </button>
           </nav>
@@ -34,22 +29,16 @@ const Header = () => {
           <div className="menu">
             <a
               href="#project"
-              activeClassName={headstyle.linkActive}
-              className={headstyle.link}
             >
               Projets
             </a>
             <a
               href="#about"
-              activeClassName={headstyle.linkActive}
-              className={headstyle.link}
             >
               A propos
             </a>
             <a
               href="#contact"
-              activeClassName={headstyle.linkActive}
-              className={headstyle.link}
             >
               Me contacter
             </a>
