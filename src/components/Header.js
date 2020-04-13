@@ -28,7 +28,7 @@ const Header = () => {
         {handleMenu && (
           <div className="menu">
             <a
-              href="#project"
+              href="#projects"
             >
               Projets
             </a>

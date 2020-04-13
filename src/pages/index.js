@@ -7,6 +7,8 @@ import "../styles/styles.scss"
 import Banner from "../components/Banner"
 
 import Animation from '../components/Animation'
+import MyProject from "../components/MyProjects.js"
+import Form from "../components/Form"
 
 const IndexPage = () => (
   <div>
@@ -14,10 +16,9 @@ const IndexPage = () => (
     <Banner/>
     <Animation/>
     <SEO title="Nombalier Adrien | Fullstack developer" description="Développeur web junior à Tours (37)" />
-    <h1 id="projets">Mes projets</h1>
+    <MyProject/>
     <About/>
-    <h1 id="contact">Me contacter</h1>
-    <p>"Formulaire ici"</p>
+    <Form/>
     <Footer/>
   </div>
 )
