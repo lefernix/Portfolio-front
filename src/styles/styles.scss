@@ -31,7 +31,7 @@ header{
     top: 0%;
     position: fixed;
     background-color: $secondary;
-    opacity: 0.6;
+    opacity: 0.8;
     z-index: 10;
     overflow: hidden;
     .inner-header {
@@ -216,7 +216,7 @@ header{
 
 section{
   background: whitesmoke;
-  margin: 1%;
+  margin: 12% 1% 12% 1%;
   #projects{
     color: black;
     text-align: center;
@@ -257,6 +257,7 @@ section{
       }
       .description{
         margin: 10px;
+        padding: 1%;
       }
       .more_button{
         padding: 10px;
@@ -269,11 +270,40 @@ section{
   }
 }
 
+//About
+
+section{
+  background: whitesmoke;
+  margin: 12% 1% 12% 1%;
+  #about{
+    color: black;
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
+    padding-top: 20px;
+  }
+  #about::after{
+    content: "";
+    width: 60px;
+    height: 5px;
+    border-radius: 8px;
+    background: $secondary;
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    border: none;
+  }
+  .description{
+    margin: 10px;
+    padding: 1%;
+  }
+}
+
 //Form
 
 section{
   background: whitesmoke;
-  margin: 1%;
+  margin: 12% 1% 12% 1%;
   #contact{
     color: black;
     text-align: center;

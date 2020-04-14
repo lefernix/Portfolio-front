@@ -10,6 +10,8 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "font-awesome": "^4.7.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
@@ -32,6 +34,7 @@
     "smooth-scrollbar": "^8.5.2"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^5.2.1",
     "prettier": "^1.19.1"
   },
   "keywords": [

@@ -1,8 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env.GATSBY_API_URL}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Nombalier Adrien | Fullstack developer`,
+    description: `Développeur web junior fullstack à Tours (37)`,
+    author: `@Adri1`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
