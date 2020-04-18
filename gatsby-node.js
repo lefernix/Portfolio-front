@@ -1,40 +1,37 @@
-const path = require(`path`)
-// Log out information after a build is done
+// const path = require('path');
 
-exports.onPostBuild = ({ reporter }) => {
-  reporter.info(`Your Gatsby site has been built!`)
-}
+// exports.createPages = async ({ graphql, actions, reporter }) => {
+//   const { createPage } = actions;
+//   const result = await graphql(
+//     `
+//       {
+//         allMongodbportfolioprojects {
+//           edges {
+//             node {
+//               id
+//               slug
+//               title
+//             }
+//           }
+//         }
+//       }
+//       `,
+//   );
 
-// Create blog pages dynamically
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const postProjectPage = path.resolve(`src/templates/blog-post.js`)
-  const result = await graphql(`
-    query {
-      allSamplePages {
-        edges {
-          node {
-            slug
-            title
-          }
-        }
-      }
-    }
-  `)
+//   // Handle errors
+//   if (result.errors) {
+//     reporter.panicOnBuild('Error while running GraphQL query.');
+//     return;
+//   }
 
-    // Handle errors
-    if (result.errors) {
-        reporter.panicOnBuild('Error while running GraphQL query.');
-        return;
-      }
-      
-  const postProjectPage = result.data.postProjectPage.edges.forEach(edge => {
-    createPage({
-      path: `${edge.node.slug}`,
-      component: postProjectPage,
-      context: {
-        title: edge.node.title,
-      },
-    })
-  })
-}
+//   const postProjectPage = path.resolve('src/templates/WorkPage.js');
+//   result.data.allMongodbportfolioprojects.edges.forEach(({ node }) => {
+//     createPage({
+//       path: `projects/${node.slug}`,
+//       component: postProjectPage,
+//       context: {
+//         slug: node.slug,
+//       },
+//     });
+//   });
+// };
