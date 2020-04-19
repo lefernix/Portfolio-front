@@ -1,8 +1,8 @@
-import React from "react"
-import Img from "gatsby-image"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import React, { useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 const MyProject = () => {
+  const [more, setMore] = useState(false)
   const { projects } = useStaticQuery(
     graphql`
       {
@@ -23,18 +23,26 @@ const MyProject = () => {
   return (
     <section>
       <h1 id="projects">Mes projets</h1>
-      <div>{console.log(projects)}</div>
       {projects.projects.map((project, index) => (
-        <div className="project">
-          <div className="gatsby-image-wrapper">
-            <img src={`http://127.0.0.1:5500/src/images/${project.mockup}`} alt="ok"></img>
-          </div>
-          <p className="title">{project.title}</p>
-          <p className="description">{project.description}
-          </p>
-          <Link
-      to={`/${projects.slug}`}></Link>
-          <button className="more_button">Voir plus</button>
+        <div className="project" key={index}>
+          {!more ? (
+            <>
+              <div className="gatsby-image-wrapper">
+                <img
+                  src={`http://127.0.0.1:5500/src/images/${project.mockup}`}
+                  alt="ok"
+                ></img>
+              </div>
+              <p className="title">{project.title}</p>
+              <p className="description">{project.description}</p>
+            </>
+          ) : (
+            "SEE MORE"
+          )}
+          <button className="more_button" onClick={() => setMore(!more)}>
+            Voir plus
+          </button>
+          {console.log(more)}
         </div>
       ))}
     </section>

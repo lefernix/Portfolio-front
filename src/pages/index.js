@@ -9,7 +9,6 @@ import Animation from '../components/Animation'
 import MyProject from "../components/MyProjects.js"
 import Form from "../components/Form"
 import About from "../components/About"
-// import Image from "../images"
 
 const IndexPage = () => (
   <div>
@@ -17,7 +16,6 @@ const IndexPage = () => (
     <Header/>
     <Banner/>
     <Animation/>
-    {/* <Image /> */}
     <MyProject/>
     <About/>
     <Form/>

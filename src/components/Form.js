@@ -45,20 +45,6 @@ const Form = () => {
             </label>
           </div>
           <div className="input">
-            <label className="label" htmlFor="message">
-              <p className="label-text">Message</p>
-              <textarea
-                placeholder="…"
-                required
-                className="input"
-                cols="30"
-                rows="10"
-                id="message"
-                name="message"
-              />
-            </label>
-          </div>
-          <div className="input">
             <label className="label" htmlFor="email">
               <p className="label-text">Email</p>
               <input
@@ -72,11 +58,23 @@ const Form = () => {
             </label>
           </div>
           <div className="input">
+            <label className="label" htmlFor="message">
+              <p className="label-text">Message</p>
+              <textarea
+                placeholder="…"
+                required
+                className="input"
+                cols="30"
+                rows="10"
+                id="message"
+                name="message"
+              />
+            </label>
+          </div>
             <button className="submit_button" type="submit">
               <FontAwesomeIcon icon={faPaperPlane} />
               Envoyer
             </button>
-          </div>
         </fieldset>
       </form>
     </section>

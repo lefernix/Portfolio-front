@@ -13,6 +13,7 @@ $secondary: #3E8B90;
 html, body {
      font-family: $font;
      font-size: 1rem;
+     font-size: 1.3rem;
 }
 
 .container {
@@ -336,19 +337,30 @@ section{
       }
       .label{
         .input{
-          
+          width: 100%;
         }
       }
-      .input{
-        .submit_button{
-          padding: 10px;
-          border: none;
-          background-color: $secondary;
-          color: whitesmoke;
-          border-radius: 4px;
-          float: right;
-        }
-      }
+      .submit_button{
+        padding: 15px;
+        border: none;
+        background-color: $secondary;
+        color: whitesmoke;
+        border-radius: 4px;
+        float: right;
+        margin: 5px;
+    }
     }
   }
+}
+/* TABLET DEVICE */
+
+@media screen and (min-width: 769px) {
+  
+}
+
+
+/* DESKTOP DEVICE */
+
+@media screen and (min-width: 1024px) {
+
 }
