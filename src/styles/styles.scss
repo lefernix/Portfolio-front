@@ -237,9 +237,14 @@ section{
   }
     .project{
       border: solid 2px $secondary;
-      .gatsby-image-wrapper{
+      margin-bottom: 65px;
+      img{  
         width: 85%;
         margin: 0 auto;
+      }
+      .gatsby-image-wrapper{
+        margin: 0 auto;
+        text-align: center;
       }
       .title{
         font-size: 24px;

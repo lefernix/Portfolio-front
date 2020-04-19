@@ -1,29 +1,12 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
-import {  graphql, useStaticQuery } from "gatsby"
 
 const Header = () => {
-
-  const data = useStaticQuery(graphql`
-  {
-    projects {
-      projects {
-        description
-        id
-        mockup
-        slug
-        title
-        tools
-      }
-    }
-  }
-`)
 
   const [handleMenu, setHandleMenu] = useState(false)
   return (
     <header>
-      {console.log(data)}
       <div className="container">
         <div className="inner-header">
           <div className="logo">

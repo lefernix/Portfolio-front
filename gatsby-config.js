@@ -14,7 +14,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/images/`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -49,7 +49,7 @@ module.exports = {
       */
       {
         resolve: `gatsby-source-mongodb`,
-        options: { connectionString: `mongodb://localhost/portfolio`,dbName: `portfolio`, collection: [`documents`, `projects`] },
+        options: { connectionString: `mongodb://localhost/portfolio`,dbName: `portfolio`, collection: `projects` },
       },
     `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
