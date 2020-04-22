@@ -267,13 +267,33 @@ section{
         margin: 10px;
         padding: 1%;
       }
-      .more_button{
+      .more_button_plus::after{
+        content: "Voir plus";
         padding: 10px;
         border: none;
         background-color: $secondary;
         color: whitesmoke;
         border-radius: 4px;
         float: right;
+      }
+      .more_button_moins::after{
+        content: "Voir moins";
+        padding: 10px;
+        border: none;
+        background-color: $secondary;
+        color: whitesmoke;
+        border-radius: 4px;
+        float: right;
+        background-color: red;
+      }
+
+      .wrapper_open{
+        background-color: grey;
+      }
+
+      .wrapper_closed{
+        overflow: hidden;
+        height: 0;
       }
   }
 }

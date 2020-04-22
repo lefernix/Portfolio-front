@@ -5,22 +5,26 @@ import Header from "../components/Header"
 import "../styles/styles.scss"
 import Banner from "../components/Banner"
 
-import Animation from '../components/Animation'
+import Animation from "../components/Animation"
 import MyProject from "../components/MyProjects.js"
 import Form from "../components/Form"
 import About from "../components/About"
+import Layout from "../components/layout"
 
 const IndexPage = () => (
-  <div>
-  <SEO title="Nombalier Adrien | Fullstack developer" description="Développeur web junior à Tours (37)" />
-    <Header/>
-    <Banner/>
-    <Animation/>
-    <MyProject/>
-    <About/>
-    <Form/>
-    <Footer/>
-  </div>
+  <Layout>
+    <SEO
+      title="Nombalier Adrien | Fullstack developer"
+      description="Développeur web junior à Tours (37)"
+    />
+    <Header />
+    <Banner />
+    <Animation />
+    <MyProject />
+    <About />
+    <Form />
+    <Footer />
+  </Layout>
 )
 
 export default IndexPage

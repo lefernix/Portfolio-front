@@ -27,13 +27,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `dl`,
-        path: `${__dirname}/src/assets/dl`,
-      },
-    },
-    {
       resolve: "gatsby-source-graphql",
       options: {
         // Arbitrary name for the remote schema Query type
