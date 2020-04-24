@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 // import Images from '../images'
 import Img from "gatsby-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 
 const MyProject = () => {
   // const data = Images()
@@ -43,6 +45,14 @@ const MyProject = () => {
       {projects.projects.projects.map((project, index) => (
         <div className="project" key={index}>
           <>
+            <div
+              className={
+                currentId === project.id ? "wrapper_open" : "wrapper_closed"
+              }
+            >
+              <p>{project.tools}</p>
+              <p>Git Hub</p>
+            </div>
             <div className="image-container">
               <div className="gatsby-image-wrapper">
                 <Img
@@ -55,25 +65,24 @@ const MyProject = () => {
             </div>
             <p className="title">{project.title}</p>
             <p className="description">{project.description}</p>
-            <div
-              className={
-                currentId === project.id ? "wrapper_open" : "wrapper_closed"
-              }
-            >
-              <p>{project.tools}</p>
-            </div>
           </>
+          <div className="buttons">
           {currentId === project.id ? (
             <button
               className="more_button_moins"
               onClick={() => setCurrentId(false)}
-            ></button>
+            >
+              <FontAwesomeIcon icon={faEyeSlash} />
+            </button>
           ) : (
             <button
               className="more_button_plus"
               onClick={() => setCurrentId(project.id)}
-            ></button>
+            >
+              <FontAwesomeIcon icon={faEye} />
+            </button>
           )}
+          </div>
         </div>
       ))}
     </section>
