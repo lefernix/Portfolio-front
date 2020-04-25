@@ -43,7 +43,7 @@ const MyProject = () => {
       <h1 id="projects">Mes projets</h1>
       {console.log(projects)}
       {projects.projects.projects.map((project, index) => (
-        <div className="project" key={index}>
+        <div className="project" key={index} data-aos={index % 2 === 0 ? "fade-right" : "fade-left" } data-aos-duration="800">
           <>
             <div
               className={

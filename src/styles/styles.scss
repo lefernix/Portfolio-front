@@ -2,6 +2,8 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 $font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -11,13 +13,17 @@ $font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 $white: #fff;
 $black: #000;
 $off-white: #f2f4f5;
-$secondary: #3e8b90;
+$primary: #00838f;
+$primary-dark: #005662;
+$primary-light: #4fb3bf;
 
 html,
 body {
   font-family: $font;
   font-size: 1rem;
   font-size: 1.3rem;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .container {
@@ -33,9 +39,11 @@ header {
   width: 100%;
   top: 0%;
   position: fixed;
-  background-color: $secondary;
+  background-color: #00838f;
   z-index: 10;
   overflow: hidden;
+  border-bottom: 8px solid #005662;
+  box-shadow: 3px 2px 10px #5f5f5f;
   .navbar {
     height: auto;
     display: flex;
@@ -49,9 +57,10 @@ header {
 
       .nav-links {
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.7);
-        margin: 5px 5px;
-        font-size: 18px;
+        margin: 10px 5px;
+        font-size: 21px;
+        letter-spacing: 2px;
+        color: $white;
       }
       .main-nav a {
         text-align: center;
@@ -70,8 +79,10 @@ header {
 
     .navbar-toggle {
       cursor: pointer;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 24px;
+    }
+    button{
+      color: white;
+      font-size: 32px;
     }
 
     .active {
@@ -165,7 +176,7 @@ header {
 //     width: 1em;
 //     height: 1em;
 //     transform: translateY(100%);
-//     background: $secondary;
+//     background: $primary;
 //     &:nth-child(2) {
 //       height: 1.5em;
 //       width: 3em;
@@ -240,14 +251,14 @@ section {
     width: 60px;
     height: 5px;
     border-radius: 8px;
-    background: $secondary;
+    background: $primary;
     position: relative;
     display: block;
     margin: 20px auto;
     border: none;
   }
   .project {
-    border: solid 2px $secondary;
+    border: solid 2px $primary;
     position: relative;
     margin-bottom: 65px;
     display: block;
@@ -272,7 +283,7 @@ section {
       width: 30px;
       height: 5px;
       border-radius: 8px;
-      background: $secondary;
+      background: $primary;
       display: block;
       margin: 10px auto;
       border: none;
@@ -282,7 +293,7 @@ section {
       padding: 1%;
     }
     .more_button_plus {
-      background-color: $secondary;
+      background-color: $primary;
       box-shadow: 0 0 0.25rem #777777;
       text-decoration: none;
       border-radius: 50%;
@@ -295,7 +306,7 @@ section {
       outline: none;
     }
     .more_button_moins {
-      background-color: $secondary;
+      background-color: $primary;
       box-shadow: 0 0 0.25rem #777777;
       text-decoration: none;
       border-radius: 50%;
@@ -362,7 +373,7 @@ section {
     width: 60px;
     height: 5px;
     border-radius: 8px;
-    background: $secondary;
+    background: $primary;
     position: relative;
     display: block;
     margin: 20px auto;
@@ -391,7 +402,7 @@ section {
     width: 60px;
     height: 5px;
     border-radius: 8px;
-    background: $secondary;
+    background: $primary;
     position: relative;
     display: block;
     margin: 20px auto;
@@ -399,7 +410,7 @@ section {
   }
   .form {
     fieldset {
-      border: $secondary 1px solid;
+      border: $primary 1px solid;
       border-radius: 5px;
       legend {
       }
@@ -411,7 +422,7 @@ section {
       .submit_button {
         padding: 15px;
         border: none;
-        background-color: $secondary;
+        background-color: $primary;
         color: whitesmoke;
         border-radius: 4px;
         float: right;
@@ -428,19 +439,20 @@ section {
     width: 100%;
     top: 0%;
     position: fixed;
-    background-color: $secondary;
+    background-color: $primary;
     z-index: 10;
     overflow: hidden;
+    border-bottom: 12px solid $primary-dark;
+    box-shadow: 3px 2px 10px #5f5f5f;
     .navbar {
       display: flex;
       justify-content: space-between;
-      padding-bottom: 0;
-      height: 70px;
       align-items: center;
+      margin: 22px;
 
       .main-nav {
         display: flex;
-        margin-right: 30px;
+        margin-right: 10px;
         flex-direction: row;
         justify-content: flex-end;
 
@@ -451,11 +463,8 @@ section {
     .nav-links {
       margin-left: 40px;
     }
-   }
-
-      
+   }  
     }
-
     .logo {
       margin-top: 0;
     }
