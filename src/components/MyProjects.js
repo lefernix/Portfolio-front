@@ -8,7 +8,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons"
 const MyProject = () => {
   // const data = Images()
   const [currentId, setCurrentId] = useState(null)
-  const projects = useStaticQuery(
+   const projects = useStaticQuery(
     graphql`
       {
         projects {
@@ -63,8 +63,10 @@ const MyProject = () => {
                 />
               </div>
             </div>
+            <div className="contents">
             <p className="title">{project.title}</p>
             <p className="description">{project.description}</p>
+            </div>
           </>
           <div className="buttons">
           {currentId === project.id ? (

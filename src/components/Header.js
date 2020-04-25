@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faTimes, faHome } from "@fortawesome/free-solid-svg-icons"
 import cx from "classnames"
 
 const Header = () => {
@@ -10,35 +10,29 @@ const Header = () => {
     setHandleMenu(!handleMenu)
   }
   return (
-    <header>
-      <nav className="navbar">
-        <div className="logo">
-          <a href="/">logo</a>
-        </div>
-        <div className="menu">
-          <div className={cx({ active: handleMenu }, "main-nav")}>
-            <a href="#projects" className="nav-links" onClick={() =>handling()}>
-              Projets
-            </a>
-            <a href="#about" className="nav-links" onClick={() =>handling()}>
-              A propos
-            </a>
-            <a href="#contact" className="nav-links" onClick={() =>handling()}>
-              Me contacter
-            </a>
-          </div>
-          <div className="navbar-toggle">
-            <button type="button" onClick={() => handling()}>
-              {!handleMenu ? (
-                <FontAwesomeIcon icon={faBars} />
-              ) : (
-                <FontAwesomeIcon icon={faTimes} />
-              )}
-            </button>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <nav id="navigation" className="NavBar">
+      <h3 id="header">LOGO</h3>
+      <button type="button" style={handleMenu ? {position: "fixed", right: 0, padding: "1rem"} : {}} className="menu_button" onClick={() => handling()}>
+        {!handleMenu ? (
+          <FontAwesomeIcon icon={faBars} />
+        ) : (
+          <FontAwesomeIcon icon={faTimes} />
+        )}
+      </button>
+      <div
+        className={cx(
+          { "overlay": handleMenu, "overlay_close": !handleMenu },
+          "list"
+        )}
+      >
+        <ul className={cx({ "list__hidden": !handleMenu }, "list")}>
+          <li className="item"><a href="#header" className="link" onClick={() => handling()}><FontAwesomeIcon icon={faHome} /></a></li>
+          <li className="item"><a href="#projects" className="link" onClick={() => handling()}>Projects</a></li>
+          <li className="item"><a href="#about" className="link" onClick={() => handling()}>About</a></li>
+          <li className="item"><a href="#contact" className="link" onClick={() => handling()}>Contact</a></li>
+        </ul>
+      </div>
+    </nav>
   )
 }
 
