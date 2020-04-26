@@ -38,13 +38,16 @@ body {
 .NavBar {
   padding: var(--spacing-lg);
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 9;
   align-items: center;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  top: 0;
+  background-color: white;
+  box-shadow: 5px 2px 5px #949494;
 
   .overlay_close {
     height: 100%;
@@ -329,11 +332,14 @@ section {
     .image-container {
       display: flex;
       justify-content: center;
+      width: 100%;
+      height: auto;
 
       .gatsby-image-wrapper {
         align-items: center;
         text-align: center;
-        width: 300px;
+        width: 100%;
+        height: auto;
       }
     }
     .title {
@@ -351,34 +357,49 @@ section {
       border: none;
     }
     .description {
-      margin: 10px;
-      padding: 1%;
+      font-size: 1rem;
     }
     .more_button_plus {
-      background-color: $primary;
-      box-shadow: 0 0 0.25rem #777777;
+      box-shadow: 2px 2px 5px #616161;
       text-decoration: none;
       border-radius: 50%;
       justify-content: center;
       align-items: center;
-      width: 3rem;
-      height: 3rem;
+      width: 2rem;
+      height: 2rem;
       z-index: 8;
       margin: 6px;
+      border: none;
+      color: #4fb3bf;
+      background-color: white;
       outline: none;
+      cursor: pointer;
+      transition: 0.3s;
+      .svg-inline--fa {
+        transform: rotate(0deg);
+        transition: transform 0.3s linear;
+      }
     }
     .more_button_moins {
-      background-color: $primary;
-      box-shadow: 0 0 0.25rem #777777;
+      box-shadow: 2px 2px 5px #616161;
       text-decoration: none;
       border-radius: 50%;
       justify-content: center;
       align-items: center;
-      width: 3rem;
-      height: 3rem;
+      width: 2rem;
+      height: 2rem;
       z-index: 8;
       margin: 6px;
+      border: none;
+      color: white;
+      background-color: #4fb3bf;
       outline: none;
+      transition: 0.3s;
+      cursor: pointer;
+      .svg-inline--fa {
+        transform: rotate(360deg);
+        transition: transform 0.3s linear;
+      }
     }
 
     .buttons {
@@ -508,7 +529,10 @@ section {
       background-color: $primary-light;
       overflow-x: hidden;
       transition: 0.5s;
-      padding-top: 8%;
+      .link:hover {
+        background-color: white;
+        transition: 0.3s;
+      }
     }
   }
   //Projects
@@ -536,33 +560,35 @@ section {
       display: flex;
       flex-direction: row-reverse;
       background-color: white;
-      padding-top: 32px;
 
       .gatsby-image-wrapper:nth-child(odd) {
         align-items: center;
         text-align: center;
-        width: 500px;
+        width: 100%;
+        height: auto;
         background-color: white;
       }
     }
     .project {
       display: flex;
-      border: solid 0px;
-      padding-top: 32px;
 
       .image-container {
         display: flex;
         justify-content: center;
+        width: 100%;
+        height: auto;
 
         .gatsby-image-wrapper {
           align-items: center;
           text-align: center;
-          width: 500px;
+          width: 100%;
+          height: auto;
           background-color: whitesmoke;
         }
       }
       .contents {
         width: 100%;
+        margin: 10px 2px 10px 2px;
         .title {
           font-size: 24px;
           text-align: center;
@@ -611,32 +637,48 @@ section {
         color: white;
         font-size: 20px;
       }
-    }
-    .more_button_plus {
-      background-color: $primary;
-      box-shadow: 0 0 0.25rem #777777;
-      text-decoration: none;
-      border-radius: 50%;
-      justify-content: center;
-      align-items: center;
-      width: 3rem;
-      height: 3rem;
-      z-index: 8;
-      margin: 6px;
-      outline: none;
-    }
-    .more_button_moins {
-      background-color: $primary;
-      box-shadow: 0 0 0.25rem #777777;
-      text-decoration: none;
-      border-radius: 50%;
-      justify-content: center;
-      align-items: center;
-      width: 3rem;
-      height: 3rem;
-      z-index: 8;
-      margin: 6px;
-      outline: none;
+      .more_button_plus {
+        box-shadow: 2px 2px 5px #616161;
+        text-decoration: none;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        z-index: 8;
+        margin: 6px;
+        border: none;
+        color: #4fb3bf;
+        background-color: white;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s;
+        .svg-inline--fa {
+          transform: rotate(0deg);
+          transition: transform 0.3s linear;
+        }
+      }
+      .more_button_moins {
+        box-shadow: 2px 2px 5px #616161;
+        text-decoration: none;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        width: 2rem;
+        height: 2rem;
+        z-index: 8;
+        margin: 6px;
+        border: none;
+        color: white;
+        background-color: #4fb3bf;
+        outline: none;
+        transition: 0.3s;
+        cursor: pointer;
+        .svg-inline--fa {
+          transform: rotate(360deg);
+          transition: transform 0.3s linear;
+        }
+      }
     }
 
     .buttons {

@@ -18,7 +18,7 @@ const Banner = () => {
     <div className="Banner">
       <div className="row">
         <div className="main-text">NOMBALIER Adrien</div>
-        <div className="second-text">Developer Web Junior</div>
+        <div className="second-text">Developpeur Web Junior</div>
         <div className="main-img"><Img fluid={data.homeimg.childImageSharp.fluid} /></div>
       </div>
     </div>
