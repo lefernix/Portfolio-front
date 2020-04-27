@@ -18,8 +18,8 @@ const IndexPage = () => (
       description="Développeur web junior à Tours (37)"
     />
     <Header />
-    <Banner />
     <Animation />
+    <Banner />
     <MyProject />
     <About />
     <Form />

@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby"
 // import Images from '../images'
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faInfo} from "@fortawesome/free-solid-svg-icons"
+import { faInfo } from "@fortawesome/free-solid-svg-icons"
 
 const MyProject = () => {
   // const data = Images()
@@ -24,7 +24,10 @@ const MyProject = () => {
             url
           }
         }
-        allFile(filter: { extension: { eq: "png" } }) {
+        allFile(
+          filter: { sourceInstanceName: { eq: "images" } }
+          sort: { fields: childImageSharp___fluid___originalName }
+        ) {
           edges {
             node {
               childImageSharp {
@@ -44,7 +47,6 @@ const MyProject = () => {
   return (
     <section>
       <h1 id="projects">Mes projets</h1>
-      {console.log(projects)}
       {projects.projects.projects.map((project, index) => (
         <div
           className="project"
@@ -58,10 +60,21 @@ const MyProject = () => {
                 currentId === project.id ? "wrapper_open" : "wrapper_closed"
               }
             >
-              <p>Outils front : {project?.toolsFront}</p>
-              <p>Outils Back : {project?.toolsBack}</p>
-              <p>Archirecture : {project?.architecture}</p>
-              <p>Url/Repository : {project.url}</p>
+                {project.toolsFront && <p>Outils front : {project.toolsFront}</p>}
+                {project.toolsBront && <p>Outils Back : {project.toolsBack}</p>}
+                {project.architecture && <p>Archirecture : {project.architecture}</p>}
+                {project?.url && (
+                  <p>
+                    Url/Repository :{" "}
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {project.url}
+                    </a>
+                  </p>
+                )}
             </div>
             <div className="buttons">
               {currentId === project.id ? (
