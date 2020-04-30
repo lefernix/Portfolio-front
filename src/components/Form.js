@@ -6,13 +6,19 @@ const Form = () => {
   return (
     <section>
       <h1 id="contact">Me contacter</h1>
-      <form className="form" encType="multipart/form-data" autoComplete="off">
+      <form
+        className="form"
+        encType="multipart/form-data"
+        autoComplete="off"
+        action="#"
+        method="post"
+      >
         <fieldset>
           <legend>Formulaire de contact</legend>
           <label className="label" htmlFor="firstname">
             <p className="label-text">Prénom</p>
             <input
-              placeholder="…"
+              
               required
               className="input"
               type="text"
@@ -23,7 +29,7 @@ const Form = () => {
           <label className="label" htmlFor="lastname">
             <p className="label-text">Nom</p>
             <input
-              placeholder="…"
+              
               required
               className="input"
               type="text"
@@ -35,7 +41,7 @@ const Form = () => {
             <label className="label" htmlFor="subject">
               <p className="label-text">Objet</p>
               <input
-                placeholder="…"
+                
                 required
                 className="input"
                 type="text"
@@ -48,7 +54,7 @@ const Form = () => {
             <label className="label" htmlFor="email">
               <p className="label-text">Email</p>
               <input
-                placeholder="…"
+                
                 required
                 className="input"
                 type="text"
@@ -61,7 +67,7 @@ const Form = () => {
             <label className="label" htmlFor="message">
               <p className="label-text">Message</p>
               <textarea
-                placeholder="…"
+                
                 required
                 className="input"
                 cols="30"
@@ -71,10 +77,10 @@ const Form = () => {
               />
             </label>
           </div>
-            <button className="submit_button" type="submit">
-              <FontAwesomeIcon icon={faPaperPlane} />
-              Envoyer
-            </button>
+          <button className="submit_button" type="submit">
+            {/* <FontAwesomeIcon icon={faPaperPlane} /> */}
+            Envoyer
+          </button>
         </fieldset>
       </form>
     </section>

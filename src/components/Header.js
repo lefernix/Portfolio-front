@@ -26,7 +26,7 @@ const Header = () => {
         )}
       >
         <ul className={cx({ "list__hidden": !handleMenu }, "list")}>
-          <li className="item"><a href="#header" className="link" onClick={() => handling()}><FontAwesomeIcon icon={faHome} /></a></li>
+          <li className="item"><a href="#" className="link" onClick={() => handling()}><FontAwesomeIcon icon={faHome} /></a></li>
           <li className="item"><a href="#projects" className="link" onClick={() => handling()}>Projects</a></li>
           <li className="item"><a href="#about" className="link" onClick={() => handling()}>About</a></li>
           <li className="item"><a href="#contact" className="link" onClick={() => handling()}>Contact</a></li>
