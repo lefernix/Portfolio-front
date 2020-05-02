@@ -1,4 +1,7 @@
-require("dotenv").config();
+require("dotenv").config({
+  path: `.env.${process.env.GATSBY_API_URL}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Nombalier Adrien | Fullstack developer`,
@@ -24,10 +27,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-background-image",
+      resolve: 'gatsby-background-image',
       options: {
         // add your own characters to escape, replacing the default ':/'
-        specialChars: "/:",
+        specialChars: '/:',
       },
     },
     {
@@ -38,9 +41,18 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "projects",
         // Url to query from
-        url: `${process.env.GATSBY_API_URL}/graphql`,
+        url: "http://localhost:8001/graphql",
       },
-    },
+      },
+      /*
+      * Gatsby's data processing layer begins with “source” plugins. Here we
+      * setup the site to pull data from the "documents" collection in a local
+      * MongoDB instance
+      */
+      {
+        resolve: `gatsby-source-mongodb`,
+        options: { connectionString: `mongodb://localhost/portfolio`,dbName: `portfolio`, collection: `projects` },
+      },
     `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
