@@ -1,7 +1,4 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
+require("dotenv").config();
 module.exports = {
   siteMetadata: {
     title: `Nombalier Adrien | Fullstack developer`,
@@ -41,7 +38,7 @@ module.exports = {
         // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
         fieldName: "projects",
         // Url to query from
-        url: `${process.env.GATSBY_API_URL}/graphql`,
+        url: `http://localhost:8001/graphql`,
       },
     },
     `gatsby-plugin-sass`,
