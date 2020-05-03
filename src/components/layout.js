@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -15,7 +16,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-        <main>{children}</main>
+      <Helmet title={data.site.siteMetadata.title} />
+      <main>{children}</main>
     </>
   )
 }

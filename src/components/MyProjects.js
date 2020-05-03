@@ -10,35 +10,30 @@ const MyProject = () => {
   const [currentId, setCurrentId] = useState(null)
   const projects = useStaticQuery(
     graphql`
-      {
-        projects {
-          projects {
-            id
-            slug
-            title
-            description
-            mockup
-            toolsFront
-            toolsBack
-            architecture
-            url
-          }
-        }
-        allFile(
-          filter: { sourceInstanceName: { eq: "images" } }
-          sort: { fields: childImageSharp___fluid___originalName }
-        ) {
+      query {
+        allMarkdownRemark(sort: {fields: frontmatter___title}) {
           edges {
             node {
-              childImageSharp {
-                fluid(pngQuality: 10, maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
-                  presentationWidth
-                }
+              frontmatter {
+                id
+                title
+                description
+                mockup
+                toolsFront
+                toolsBack
+                webservice
+                url_github
               }
             }
           }
-          totalCount
+        }
+        allImageSharp(sort: {fields: fluid___originalName}) {
+          nodes {
+            fluid(pngQuality: 10, maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+              presentationWidth
+            }
+          }
         }
       }
     `
@@ -47,37 +42,37 @@ const MyProject = () => {
   return (
     <section>
       <h1 id="projects">Mes projets</h1>
-      {projects.projects.projects.map((project, index) => (
-        <div
-          className="project"
-          key={index}
-          data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
-          data-aos-duration="800"
-        >
-          <>
-            <div
+      {projects.allMarkdownRemark.edges.map((project, index) => (
+      <div
+        className="project"
+        key={index}
+        data-aos={project.node.frontmatter.id % 2 === 0 ? "fade-right" : "fade-left"}
+        data-aos-duration="800"
+      >
+        <>
+           <div
               className={
-                currentId === project.id ? "wrapper_open" : "wrapper_closed"
+                currentId === project.node.frontmatter.id ? "wrapper_open" : "wrapper_closed"
               }
             >
-                {project.toolsFront && <p>Outils front : {project.toolsFront}</p>}
-                {project.toolsBront && <p>Outils Back : {project.toolsBack}</p>}
-                {project.architecture && <p>Archirecture : {project.architecture}</p>}
-                {project?.url && (
+                {<p>Outils front : {project.node.frontmatter.toolsFront}</p>}
+                {<p>Outils Back : {project.node.frontmatter.toolsBack}</p>}
+                {<p>Archirecture : {project.node.frontmatter.webservice}</p>}
+                {project.node.frontmatter?.url_github && (
                   <p>
                     Url/Repository :{" "}
                     <a
-                      href={project.url}
+                      href={project.node.frontmatter.url}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {project.url}
+                      {project.node.frontmatter.url}
                     </a>
                   </p>
                 )}
-            </div>
-            <div className="buttons">
-              {currentId === project.id ? (
+            </div> 
+           <div className="buttons">
+              {currentId === project.node.frontmatter.id ? (
                 <button
                   className="more_button_moins"
                   onClick={() => setCurrentId(false)}
@@ -87,28 +82,28 @@ const MyProject = () => {
               ) : (
                 <button
                   className="more_button_plus"
-                  onClick={() => setCurrentId(project.id)}
+                  onClick={() => setCurrentId(project.node.frontmatter.id)}
                 >
                   <FontAwesomeIcon icon={faInfo} />
                 </button>
               )}
-            </div>
-            <div className="image-container">
-              <div className="gatsby-image-wrapper">
-                <Img
+            </div> 
+          <div className="image-container">
+            <div className="gatsby-image-wrapper">
+              <Img
                   fluid={
-                    projects.allFile.edges[index].node.childImageSharp.fluid
+                    projects.allImageSharp.nodes[index].fluid
                   }
                   alt={project.mockup}
                 />
-              </div>
             </div>
-            <div className="contents">
-              <p className="title">{project.title}</p>
-              <p className="description">{project.description}</p>
-            </div>
-          </>
-        </div>
+          </div>
+          <div className="contents">
+            <p className="title">{project.node.frontmatter.title}</p>
+            <p className="description">{project.node.frontmatter.description}</p>
+          </div>
+        </>
+      </div>
       ))}
     </section>
   )

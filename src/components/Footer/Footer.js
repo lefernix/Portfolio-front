@@ -3,7 +3,7 @@ import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
-import CV from '../../assets/dl/CV.pdf'
+// import CV from '../../assets/dl/CV.pdf'
 
 const Footer = () => (
   <div className={footerstyle.footer}>
@@ -25,7 +25,7 @@ const Footer = () => (
     <FontAwesomeIcon icon={faFacebookF} className={footerstyle.icons}/></a>
     <a
         className={footerstyle.social_link}
-        href={CV}
+        // href={CV}
         rel="noopener noreferrer"
         download
     >
