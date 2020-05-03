@@ -11,7 +11,7 @@ const MyProject = () => {
   const projects = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: {fields: frontmatter___title}) {
           edges {
             node {
               frontmatter {
@@ -29,8 +29,9 @@ const MyProject = () => {
         }
         allImageSharp(sort: {fields: fluid___originalName}) {
           nodes {
-            fluid {
+            fluid(pngQuality: 10, maxWidth: 800) {
               ...GatsbyImageSharpFluid
+              presentationWidth
             }
           }
         }
@@ -45,7 +46,7 @@ const MyProject = () => {
       <div
         className="project"
         key={index}
-        // data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+        data-aos={project.node.frontmatter.id % 2 === 0 ? "fade-right" : "fade-left"}
         data-aos-duration="800"
       >
         <>
