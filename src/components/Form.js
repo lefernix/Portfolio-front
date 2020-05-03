@@ -8,10 +8,10 @@ const Form = () => {
       <h1 id="contact">Me contacter</h1>
       <form
         className="form"
-        encType="multipart/form-data"
-        autoComplete="off"
-        action="#"
+        name="contact"
         method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
         <fieldset>
           <legend>Formulaire de contact</legend>
@@ -78,7 +78,7 @@ const Form = () => {
             </label>
           </div>
           <button className="submit_button" type="submit">
-            {/* <FontAwesomeIcon icon={faPaperPlane} /> */}
+            <FontAwesomeIcon icon={faPaperPlane} />
             Envoyer
           </button>
         </fieldset>
