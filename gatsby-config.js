@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `Nombalier Adrien | Fullstack developer`,
@@ -15,36 +11,19 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `photo`,
-        path: `${__dirname}/src/assets/photo`,
-      },
-    },
-    {
-      resolve: "gatsby-background-image",
-      options: {
-        // add your own characters to escape, replacing the default ':/'
-        specialChars: "/:",
-      },
-    },
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        // Arbitrary name for the remote schema Query type
-        typeName: "Project",
-        // Field under which the remote schema will be accessible. You'll use this in your Gatsby query
-        fieldName: "projects",
-        // Url to query from
-        url: `${process.env.GATSBY_API_URL}/graphql`,
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
     `gatsby-plugin-sass`,
+    'gatsby-transformer-remark'
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
