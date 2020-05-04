@@ -11,7 +11,7 @@ const Form = () => {
         name="contact"
         method="POST"
         data-netlify="true"
-        action="https://adrien-nombalier.netlify.app/contact"
+        action="#"
       >
         <fieldset>
           <legend>Formulaire de contact</legend>
