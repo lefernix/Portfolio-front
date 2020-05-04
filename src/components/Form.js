@@ -21,7 +21,7 @@ const Form = () => {
             <input
               required
               className="input"
-              type="text"
+              type="hidden"
               id="firstname"
               name="firstname"
             />
@@ -31,7 +31,7 @@ const Form = () => {
             <input
               required
               className="input"
-              type="text"
+              type="hidden"
               id="lastname"
               name="lastname"
             />
@@ -42,7 +42,7 @@ const Form = () => {
               <input
                 required
                 className="input"
-                type="text"
+                type="hidden"
                 id="subject"
                 name="subject"
               />
@@ -54,7 +54,7 @@ const Form = () => {
               <input
                 required
                 className="input"
-                type="text"
+                type="hidden"
                 id="email"
                 name="email"
               />
@@ -66,6 +66,7 @@ const Form = () => {
               <textarea
                 required
                 className="input"
+                type="hidden"
                 cols="30"
                 rows="10"
                 id="message"
