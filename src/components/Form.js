@@ -10,6 +10,7 @@ const Form = () => {
         className="form"
         name="contact"
         method="POST"
+        data-netlify-recaptcha="true"
         data-netlify="true"
         action="#"
       >
@@ -72,7 +73,6 @@ const Form = () => {
               />
             </label>
           </div>
-          <div data-netlify-recaptcha="true"></div>
           <button className="submit_button" type="submit">
             <FontAwesomeIcon icon={faPaperPlane} />
             Envoyer
