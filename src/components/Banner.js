@@ -9,7 +9,7 @@ const Banner = () => {
         edges {
           node {
             id
-            fluid {
+            fluid(pngQuality: 10){
               ...GatsbyImageSharpFluid
             }
           }
