@@ -6,20 +6,16 @@
   margin: 0;
 }
 
-$font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font: "Open Sans", "Helvetica Neue", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
 //Color
 $white: #fff;
-$black: #000;
 $off-white: #f2f4f5;
-$primary: #00838f;
-$primary-dark: #005662;
-$primary-light: #4fb3bf;
-
-//CV Color
-$cvprimary: #D08270;
-$cvsecondary:#3C4358;
+$primary: #3282b8;
+$primary-light: #bbe1fa;
+$primary-dark: #0f4c75;
+$background: #1b262c;
 
 html,
 body {
@@ -33,6 +29,10 @@ body {
 a {
   text-decoration: none;
   color: white;
+}
+h1 {
+  font-size: 2rem;
+  margin: 0;
 }
 
 .container {
@@ -53,10 +53,11 @@ a {
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem;
   top: 0;
   background-color: white;
   box-shadow: 5px 2px 5px #949494;
+  color: white;
 
   .overlay_close {
     height: 100%;
@@ -65,7 +66,7 @@ a {
     z-index: 10;
     top: 0;
     right: 0;
-    background-color: $primary-light;
+    background-color: $primary-dark;
     overflow-x: hidden;
     transition: 0.5s;
   }
@@ -77,7 +78,7 @@ a {
     z-index: 10;
     top: 0;
     right: 0;
-    background-color: $primary-light;
+    background-color: $primary-dark;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 8%;
@@ -91,7 +92,6 @@ a {
     list-style: none;
     opacity: 1;
     transition: 0.5s;
-    font-size: 32px;
     letter-spacing: 6px;
     text-transform: uppercase;
   }
@@ -119,9 +119,17 @@ a {
   }
 
   .button__active {
-    color: black;
-    border: 2px solid black;
+    border: 2px solid #1b262c;
     transition: 0.5s;
+  }
+
+  button {
+    color: $background;
+    .svg-inline--fa {
+      overflow: visible;
+      width: 42px;
+      height: 42px;
+    }
   }
 
   .icon {
@@ -140,7 +148,7 @@ a {
     align-items: center;
     text-decoration: none;
     padding: 30px;
-    color: $primary-dark;
+    color: $primary-light;
   }
 
   .link:hover {
@@ -180,31 +188,26 @@ a {
     flex-direction: column;
     .main-text {
       text-transform: uppercase;
-      color: $black;
+      color: $background;
       font-weight: 700;
       width: 100%;
       align-items: center;
-      transform: translateY(-50%);
-      mix-blend-mode: difference;
-      z-index: 9;
       font-size: 48px;
       padding: 10px;
     }
     .second-text {
       text-transform: uppercase;
-      color: $black;
+      color: $background;
       font-weight: 700;
       width: 100%;
       align-items: center;
-      transform: translateY(-50%);
-      mix-blend-mode: difference;
-      z-index: 9;
       font-size: 24px;
       padding: 10px;
     }
     .main-img {
       display: flex;
       justify-content: center;
+      margin-top: 2rem;
       .gatsby-image-wrapper {
         position: relative;
         overflow: hidden;
@@ -219,106 +222,131 @@ a {
 //Animation
 
 .white {
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index: -1;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
 
-    &:before {
-      z-index: 5;
-      content: '';
-      position: absolute;
-      background-image: linear-gradient(-180deg, #FFFFFF 0%, rgba(255,255,255,0.00) 100%) }
-    &:after {
-      z-index: 5;
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 20vh;
-      background-image: linear-gradient(0deg, #EBEBEB 0%, rgba(235,235,235,0.00) 100%) }}
-
-  .squares {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
+  &:before {
+    z-index: 5;
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(
+      -180deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
-  .square {
-    animation: squares 9.5s linear infinite;
-    align-self: flex-end;
-    width: 1em;
-    height: 1em;
-    transform: translateY(100%);
-    background: $cvprimary;
-    &:nth-child(2) {
-      height: 1.5em;
-      width: 3em;
-      animation-delay: 1s;
-      animation-duration: 17s;
-      -webkit-filter: blur(5px) }
-    &:nth-child(3) {
-      height: 2em;
-      width: 1em;
-      animation-delay: 1.5s;
-      animation-duration: 8s;
-      -webkit-filter: blur() }
-    &:nth-child(4) {
-      height: 1em;
-      width: 1.5em;
-      animation-delay: 0.5s;
-      -webkit-filter: blur(3px);
-      animation-duration: 13s }
-    &:nth-child(5) {
-      height: 1.25em;
-      width: 2em;
-      animation-delay: 4s;
-      -webkit-filter: blur(2px);
-      animation-duration: 11s }
-    &:nth-child(6) {
-      height: 2.5em;
-      width: 2em;
-      animation-delay: 2s;
-      -webkit-filter: blur(1px);
-      animation-duration: 9s }
-    &:nth-child(7) {
-      height: 5em;
-      width: 2em;
-      -webkit-filter: blur(2.5px);
-      animation-duration: 12s }
-    &:nth-child(8) {
-      height: 1em;
-      width: 3em;
-      animation-delay: 5s;
-      -webkit-filter: blur(6px);
-      animation-duration: 18s }
-    &:nth-child(9) {
-      height: 1.5em;
-      width: 2em;
-      -webkit-filter: blur(0.5px);
-      animation-duration: 9s }
-    &:nth-child(9) {
-      height: 3em;
-      width: 2.4em;
-      animation-delay: 6s;
-      -webkit-filter: blur(0.5px);
-      animation-duration: 12s }}
+  &:after {
+    z-index: 5;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20vh;
+    background-image: linear-gradient(
+      0deg,
+      #ebebeb 0%,
+      rgba(235, 235, 235, 0) 100%
+    );
+  }
+}
 
-  @keyframes squares {
-    from { transform: translateY(100%) rotate(-50deg) }
-    to   { transform: translateY(calc(-100vh + -100%)) rotate(20deg) }}
+.squares {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.square {
+  animation: squares 9.5s linear infinite;
+  align-self: flex-end;
+  width: 1em;
+  height: 1em;
+  transform: translateY(100%);
+  background: $primary-dark;
+  &:nth-child(2) {
+    height: 1.5em;
+    width: 3em;
+    animation-delay: 1s;
+    animation-duration: 17s;
+    filter: blur(5px);
+  }
+  &:nth-child(3) {
+    height: 2em;
+    width: 1em;
+    animation-delay: 1.5s;
+    animation-duration: 8s;
+    filter: blur();
+  }
+  &:nth-child(4) {
+    height: 1em;
+    width: 1.5em;
+    animation-delay: 0.5s;
+    filter: blur(3px);
+    animation-duration: 13s;
+  }
+  &:nth-child(5) {
+    height: 1.25em;
+    width: 2em;
+    animation-delay: 4s;
+    filter: blur(2px);
+    animation-duration: 11s;
+  }
+  &:nth-child(6) {
+    height: 2.5em;
+    width: 2em;
+    animation-delay: 2s;
+    filter: blur(1px);
+    animation-duration: 9s;
+  }
+  &:nth-child(7) {
+    height: 5em;
+    width: 2em;
+    filter: blur(2.5px);
+    animation-duration: 12s;
+  }
+  &:nth-child(8) {
+    height: 1em;
+    width: 3em;
+    animation-delay: 5s;
+    filter: blur(6px);
+    animation-duration: 18s;
+  }
+  &:nth-child(9) {
+    height: 1.5em;
+    width: 2em;
+    filter: blur(0.5px);
+    animation-duration: 9s;
+  }
+  &:nth-child(9) {
+    height: 3em;
+    width: 2.4em;
+    animation-delay: 6s;
+    filter: blur(0.5px);
+    animation-duration: 12s;
+  }
+}
+
+@keyframes squares {
+  from {
+    transform: translateY(100%) rotate(-50deg);
+  }
+  to {
+    transform: translateY(calc(-100vh + -100%)) rotate(20deg);
+  }
+}
 
 //MyProjects
 
 section {
-  background: whitesmoke;
-  margin: 12% 1% 12% 1%;
+  background-color: #1b262c;
+  color: white;
   #projects {
-    color: black;
+    color: white;
     text-align: center;
-    font-size: 32px;
     text-transform: uppercase;
-    padding-top: 20px;
+    padding: 2rem;
   }
   #projects::after {
     content: "";
@@ -332,12 +360,12 @@ section {
     border: none;
   }
   .project {
-    border: solid 2px $primary;
     position: relative;
-    margin-bottom: 65px;
     display: block;
     width: 100%;
     height: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
     .image-container {
       display: flex;
       justify-content: center;
@@ -354,6 +382,7 @@ section {
     .title {
       font-size: 24px;
       text-align: center;
+      margin: 18px;
     }
     .title::after {
       content: "";
@@ -367,6 +396,8 @@ section {
     }
     .description {
       font-size: 1rem;
+      line-height: 1.5;
+      padding: 5%;
     }
     .more_button_plus {
       box-shadow: 2px 2px 5px #616161;
@@ -379,7 +410,7 @@ section {
       z-index: 8;
       margin: 6px;
       border: none;
-      color: #4fb3bf;
+      color: $primary;
       background-color: white;
       outline: none;
       cursor: pointer;
@@ -401,7 +432,7 @@ section {
       margin: 6px;
       border: none;
       color: white;
-      background-color: #4fb3bf;
+      background-color: $primary;
       outline: none;
       transition: 0.3s;
       cursor: pointer;
@@ -413,7 +444,7 @@ section {
 
     .wrapper_open {
       position: absolute;
-      background: black;
+      background: #1b262c;
       background: rgba(0, 0, 0, 0.9);
       color: #f1f1f1;
       width: 100%;
@@ -425,8 +456,11 @@ section {
       flex-direction: column;
       justify-content: center;
       overflow-x: hidden;
+      border-top: 2px solid $primary-dark;
+      border-bottom: 2px solid $primary-dark;
 
-      p, a{
+      p,
+      a {
         color: $primary-light;
         font-size: 24px;
         margin: 10px;
@@ -449,7 +483,10 @@ section {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      p, a{
+      border-top: 0px solid $primary-dark;
+      border-bottom: 0px solid $primary-dark;
+      p,
+      a {
         color: $primary-light;
         font-size: 24px;
         margin: 10px;
@@ -460,6 +497,7 @@ section {
       position: absolute;
       right: 0;
       z-index: 8;
+      margin: 10px;
     }
   }
 }
@@ -467,14 +505,13 @@ section {
 //About
 
 section {
-  background: whitesmoke;
-  margin: 12% 1% 12% 1%;
+  background-color: #1b262c;
+  color: white;
   #about {
-    color: black;
+    color: white;
     text-align: center;
-    font-size: 32px;
     text-transform: uppercase;
-    padding-top: 20px;
+    padding: 2rem;
   }
   #about::after {
     content: "";
@@ -488,22 +525,21 @@ section {
     border: none;
   }
   .description {
-    margin: 10px;
-    padding: 1%;
+    padding: 10%;
+    line-height: 1.5;
   }
 }
 
 //Form
 
 section {
-  background: whitesmoke;
-  margin: 12% 1% 12% 1%;
+  background-color: #1b262c;
+  color: white;
   #contact {
-    color: black;
+    color: white;
     text-align: center;
-    font-size: 32px;
     text-transform: uppercase;
-    padding-top: 20px;
+    padding: 2rem;
   }
   #contact::after {
     content: "";
@@ -517,28 +553,78 @@ section {
     border: none;
   }
   .form {
+    padding: 1rem;
     fieldset {
       border: $primary 1px solid;
       border-radius: 5px;
       legend {
+        padding: 1rem;
       }
       .label {
         .input {
           width: 100%;
+          margin-bottom: 1.5rem;
+          margin-top: 0.5rem;
         }
       }
       .submit_button {
         padding: 15px;
         border: none;
-        background-color: $primary;
+        background-color: #3282b8;
         color: whitesmoke;
         border-radius: 4px;
-        float: right;
         margin: 5px;
+        width: 100%;
+        cursor: pointer;
       }
     }
   }
 }
+
+// Footer
+
+#links {
+  width: 100%;
+  text-align: center;
+  background-color: $background;
+  z-index: 0;
+  overflow: hidden;
+  position: relative;
+  
+  .text {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 30px 0 30px 0px;
+  }
+
+  .social__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 50px;
+
+  .social_link {
+    box-shadow: 0 0 0.25rem #777777;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    z-index: 10;
+    background-color: white;
+  }
+
+
+  .icons {
+    font-size: 1.5rem;
+    color: $primary;
+  }
+}
+}
+
 /* TABLET DEVICE */
 
 @media screen and (min-width: 769px) {
@@ -551,7 +637,7 @@ section {
       z-index: 10;
       top: 0;
       right: 0;
-      background-color: $primary-light;
+      background-color: $primary-dark;
       overflow-x: hidden;
       transition: 0.5s;
       .link:hover {
@@ -560,12 +646,24 @@ section {
       }
     }
   }
+
+  .Banner {
+    .row {
+      .main-text {
+        font-size: 3rem;
+      }
+      .second-text {
+        font-size: 2rem;
+      }
+    }
+  }
   //Projects
   section {
-    background: whitesmoke;
-    margin: 12% 1% 12% 1%;
+    background-color: #1b262c;
+
+    color: white;
     #projects {
-      color: black;
+      color: white;
       text-align: center;
       font-size: 2rem;
       text-transform: uppercase;
@@ -584,19 +682,22 @@ section {
     .project:nth-child(odd) {
       display: flex;
       flex-direction: row-reverse;
-      background-color: white;
+      background-color: #1b262c;
+      padding-top: 2rem;
+      padding-bottom: 3rem;
 
       .gatsby-image-wrapper:nth-child(odd) {
         align-items: center;
         text-align: center;
         width: 100%;
         height: auto;
-        background-color: white;
+        background-color: #1b262c;
       }
     }
     .project {
       display: flex;
-
+      padding-top: 2rem;
+      padding-bottom: 3rem;
       .image-container {
         display: flex;
         justify-content: center;
@@ -608,7 +709,7 @@ section {
           text-align: center;
           width: 100%;
           height: auto;
-          background-color: whitesmoke;
+          background-color: #1b262c;
         }
       }
       .contents {
@@ -617,6 +718,7 @@ section {
         .title {
           font-size: 1.5rem;
           text-align: center;
+          margin: 0;
         }
         .title::after {
           content: "";
@@ -629,14 +731,14 @@ section {
           border: none;
         }
         .description {
-          margin: 10px;
-          padding: 1%;
+          padding: 10%;
           font-size: 1.2rem;
+          line-height: 1.5;
         }
       }
       .wrapper_open {
         position: absolute;
-        background: black;
+        background: #1b262c;
         background: rgba(0, 0, 0, 0.9);
         color: #f1f1f1;
         width: 100%;
@@ -646,7 +748,10 @@ section {
         text-align: center;
         z-index: 8;
         transition: 1s;
-        p, a{
+        border-top: 2px solid $primary-dark;
+        border-bottom: 2px solid $primary-dark;
+        p,
+        a {
           color: $primary-light;
           font-size: 24px;
           margin: 10px;
@@ -669,7 +774,10 @@ section {
         flex-direction: column;
         color: white;
         font-size: 20px;
-        p, a{
+        border-top: 0px solid $primary-dark;
+        border-bottom: 0px solid $primary-dark;
+        p,
+        a {
           color: $primary-light;
           font-size: 24px;
           margin: 10px;
@@ -687,7 +795,7 @@ section {
         z-index: 8;
         margin: 6px;
         border: none;
-        color: #4fb3bf;
+        color: $primary;
         background-color: white;
         outline: none;
         cursor: pointer;
@@ -709,7 +817,7 @@ section {
         margin: 6px;
         border: none;
         color: white;
-        background-color: #4fb3bf;
+        background-color: $primary;
         outline: none;
         transition: 0.3s;
         cursor: pointer;
@@ -724,6 +832,31 @@ section {
       position: absolute;
       right: 0;
       z-index: 8;
+      margin: 10px;
+    }
+  }
+
+  section{
+    .form{
+      fieldset{
+        .submit_button{
+          padding: 15px;
+          border: none;
+          background-color: #3282b8;
+          color: whitesmoke;
+          border-radius: 4px;
+          margin: 5px;
+          float: right;
+          width: auto;
+          cursor: pointer;
+          transition: 0.2s;
+        }
+        .submit_button:hover{
+          background-color:whitesmoke;
+          color: $primary;
+          transition: 0.2s;
+        }
+      }
     }
   }
 }
