@@ -7,7 +7,7 @@ const Form = () => {
     <section>
       <h1 id="contact">Me contacter</h1>
         <form  
-        className="form" name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        action="#" className="form" name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
         <input type="hidden" name="contact" value="contact" />
         <fieldset>
           <legend>Formulaire de contact</legend>
@@ -59,7 +59,7 @@ const Form = () => {
                 required
                 className="input"
                 cols="30"
-                rows="10"
+                rows="5"
                 id="message"
                 name="message"
               />
