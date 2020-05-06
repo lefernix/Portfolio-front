@@ -9,7 +9,7 @@ const Form = () => {
       <form
         className="form"
         name="contact"
-        method="post"
+        method="POST"
         netlify-honeypot="bot-field"
         data-netlify="true"
         action="#"
@@ -32,7 +32,7 @@ const Form = () => {
             Message
             <textarea name="message" id="message" rows="5" />
           </label>
-          <button className="submit_button" type="submit">
+          <button className="submit_button" type="submit" onClick={(e) => e.preventDefault()}>
             <FontAwesomeIcon icon={faPaperPlane} />
             Envoyer
           </button>
