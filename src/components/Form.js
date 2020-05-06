@@ -9,67 +9,29 @@ const Form = () => {
       <form
         className="form"
         name="contact"
-        method="POST"
-        data-netlify-recaptcha="true"
+        method="post"
+        netlify-honeypot="bot-field"
         data-netlify="true"
         action="#"
       >
         <fieldset>
           <legend>Formulaire de contact</legend>
-          <label className="label" htmlFor="firstname">
-            <p className="label-text">Prénom</p>
-            <input
-              required
-              className="input"
-              id="firstname"
-              name="firstname"
-            />
+          <label>
+            Name
+            <input type="text" name="name" id="name" />
           </label>
-          <label className="label" htmlFor="lastname">
-            <p className="label-text">Nom</p>
-            <input
-              required
-              className="input"
-              id="lastname"
-              name="lastname"
-            />
+          <label>
+            Email
+            <input type="email" name="email" id="email" />
           </label>
-          <div className="input">
-            <label className="label" htmlFor="subject">
-              <p className="label-text">Objet</p>
-              <input
-                required
-                className="input"
-                id="subject"
-                name="subject"
-              />
-            </label>
-          </div>
-          <div className="input">
-            <label className="label" htmlFor="email">
-              <p className="label-text">Email</p>
-              <input
-                required
-                className="input"
-                id="email"
-                name="email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-              />
-            </label>
-          </div>
-          <div className="input">
-            <label className="label" htmlFor="message">
-              <p className="label-text">Message</p>
-              <textarea
-                required
-                className="input"
-                cols="30"
-                rows="10"
-                id="message"
-                name="message"
-              />
-            </label>
-          </div>
+          <label>
+            Subject
+            <input type="text" name="subject" id="subject" />
+          </label>
+          <label>
+            Message
+            <textarea name="message" id="message" rows="5" />
+          </label>
           <button className="submit_button" type="submit">
             <FontAwesomeIcon icon={faPaperPlane} />
             Envoyer
