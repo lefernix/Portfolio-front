@@ -28,16 +28,9 @@ const IndexPage = () => (
     <About />
     <section>
       <h1 id="contact">Me contacter</h1>
-       <form
-        className="form"
-        name="contact"
-        action="#projects"
-        data-netlify-recaptcha="true"
-        method="post"
-        netlify-honeypot="bot-field"
-        data-netlify="true"
-      >
-        <input type="hidden" name="bot-field" />
+        <form  
+        className="form" name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+        <input type="hidden" name="contact" value="contact" />
         <fieldset>
           <legend>Formulaire de contact</legend>
           <label className="label" htmlFor="firstname">
