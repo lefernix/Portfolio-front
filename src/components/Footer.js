@@ -2,7 +2,7 @@ import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
-import CV from '../images/CV.pdf'
+// import CV from '../images/CV.pdf'
 
 const Footer = () => (
   <div id="links">
@@ -24,7 +24,7 @@ const Footer = () => (
     <FontAwesomeIcon icon={faGithub} className="icons"/></a>
     <a
         className="social_link"
-        href={CV}
+        // href={CV}
         rel="noopener noreferrer"
         download
     >
