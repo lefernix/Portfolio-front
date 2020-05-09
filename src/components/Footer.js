@@ -6,7 +6,7 @@ import CV from '../images/CV.pdf'
 
 const Footer = () => (
   <div id="links">
-    <div className="text">Social Links</div>
+    <div className="text">Social Links + CV</div>
     <div className="social__container">
     <a
         className="social_link"
