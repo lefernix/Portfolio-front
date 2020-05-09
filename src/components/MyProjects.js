@@ -11,7 +11,7 @@ const MyProject = () => {
   const projects = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark(sort: {fields: frontmatter___title}) {
+        allMarkdownRemark(sort: { fields: frontmatter___title }) {
           edges {
             node {
               frontmatter {
@@ -22,12 +22,12 @@ const MyProject = () => {
                 toolsFront
                 toolsBack
                 webservice
-                url_github
+                visiter
               }
             }
           }
         }
-        allImageSharp(sort: {fields: fluid___originalName}) {
+        allImageSharp(sort: { fields: fluid___originalName }) {
           nodes {
             fluid(pngQuality: 10, maxWidth: 800) {
               ...GatsbyImageSharpFluid
@@ -43,35 +43,36 @@ const MyProject = () => {
     <section>
       <h1 id="projects">Mes projets</h1>
       {projects.allMarkdownRemark.edges.map((project, index) => (
-      <div
-        className="project"
-        key={index}
-        data-aos={project.node.frontmatter.id % 2 === 0 ? "fade-right" : "fade-left"}
-        data-aos-duration="800"
-      >
-        <>
-           <div
+        <div
+          className="project"
+          key={index}
+          data-aos={
+            project.node.frontmatter.id % 2 === 0 ? "fade-right" : "fade-left"
+          }
+          data-aos-duration="800"
+        >
+          <>
+            <div
               className={
-                currentId === project.node.frontmatter.id ? "wrapper_open" : "wrapper_closed"
+                currentId === project.node.frontmatter.id
+                  ? "wrapper_open"
+                  : "wrapper_closed"
               }
             >
-                {<p>Outils front : {project.node.frontmatter.toolsFront}</p>}
-                {<p>Outils Back : {project.node.frontmatter.toolsBack}</p>}
-                {<p>Archirecture : {project.node.frontmatter.webservice}</p>}
-                {project.node.frontmatter?.url_github && (
-                  <p>
-                    Url/Repository :{" "}
-                    <a
-                      href={project.node.frontmatter.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {project.node.frontmatter.url}
-                    </a>
-                  </p>
-                )}
-            </div> 
-           <div className="buttons">
+              {<p>Outils front : {project.node.frontmatter.toolsFront}</p>}
+              {<p>Outils Back : {project.node.frontmatter.toolsBack}</p>}
+              {<p>Archirecture : {project.node.frontmatter.webservice}</p>}
+              {project.node.frontmatter?.visiter && (
+                <a
+                  href={project.node.frontmatter.visiter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Voir : {project.node.frontmatter.visiter}
+                </a>
+              )}
+            </div>
+            <div className="buttons">
               {currentId === project.node.frontmatter.id ? (
                 <button
                   className="more_button_moins"
@@ -87,23 +88,23 @@ const MyProject = () => {
                   <FontAwesomeIcon icon={faInfo} />
                 </button>
               )}
-            </div> 
-          <div className="image-container">
-            <div className="gatsby-image-wrapper">
-              <Img
-                  fluid={
-                    projects.allImageSharp.nodes[index].fluid
-                  }
+            </div>
+            <div className="image-container">
+              <div className="gatsby-image-wrapper">
+                <Img
+                  fluid={projects.allImageSharp.nodes[index].fluid}
                   alt={project.mockup}
                 />
+              </div>
             </div>
-          </div>
-          <div className="contents">
-            <p className="title">{project.node.frontmatter.title}</p>
-            <p className="description">{project.node.frontmatter.description}</p>
-          </div>
-        </>
-      </div>
+            <div className="contents">
+              <p className="title">{project.node.frontmatter.title}</p>
+              <p className="description">
+                {project.node.frontmatter.description}
+              </p>
+            </div>
+          </>
+        </div>
       ))}
     </section>
   )

@@ -6,5 +6,5 @@ mockup: 'wildgreenschool.png'
 toolsFront: 'HTML5, CSS3, JavaScript Native'
 toolsBack: ''
 webservice: ''
-url/github: 'https://github.com/FPaurisse/wild-green-school/tree/dev'
+visiter: https://github.com/FPaurisse/wild-green-school/tree/dev
 ---
