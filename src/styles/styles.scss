@@ -550,6 +550,7 @@ section {
       margin: 0;
       legend {
         padding: 1rem;
+        font-size: 1rem;
       }
       .label {
         .input {
@@ -557,6 +558,11 @@ section {
           margin-bottom: 1.5rem;
           margin-top: 0.5rem;
           background-color: whitesmoke;
+          line-height: 2rem;
+          padding: 6px 16px;
+          letter-spacing: 2px;
+          font-weight: 300;
+          font-size: 1rem;
         }
       }
       .submit_button {
@@ -826,8 +832,14 @@ section {
 
   section{
     .form{
+      .input{
+        line-height: 2.5rem;
+      }
       fieldset{
         margin: 1rem;
+        legend{
+          font-size: 1.5rem;
+        }
         .submit_button{
           padding: 15px;
           border: none;

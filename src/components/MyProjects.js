@@ -61,7 +61,7 @@ const MyProject = () => {
             >
               {<p>Outils front : {project.node.frontmatter.toolsFront}</p>}
               {<p>Outils Back : {project.node.frontmatter.toolsBack}</p>}
-              {<p>Archirecture : {project.node.frontmatter.webservice}</p>}
+              {<p>Webservice : {project.node.frontmatter.webservice}</p>}
               {project.node.frontmatter?.visiter && (
                 <a
                   href={project.node.frontmatter.visiter}

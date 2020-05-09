@@ -22,7 +22,7 @@ const Banner = () => {
     <div className="Banner">
       <div className="row">
         <div className="main-text">NOMBALIER Adrien</div>
-        <div className="second-text">Developpeur Web Junior</div>
+        <div className="second-text">Developpeur Web FullStack</div>
         <div className="main-img"><Img fluid={data.allImageSharp.edges["0"].node.fluid} /></div>
       </div>
     </div>
