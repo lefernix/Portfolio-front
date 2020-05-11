@@ -29,7 +29,13 @@ body {
 a {
   text-decoration: none;
   color: white;
+  outline: none;
 }
+
+a:focus{
+  outline: none;
+}
+
 h1 {
   font-size: 2rem;
   margin: 0;
@@ -68,7 +74,7 @@ h1 {
     right: 0;
     background-color: $primary-dark;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.3s;
   }
 
   .overlay {
@@ -80,7 +86,7 @@ h1 {
     right: 0;
     background-color: $primary-dark;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.3s;
     padding-top: 8%;
   }
 
@@ -91,7 +97,7 @@ h1 {
     padding: 0;
     list-style: none;
     opacity: 1;
-    transition: 0.5s;
+    transition: 0.3s;
     letter-spacing: 6px;
     text-transform: uppercase;
   }
@@ -120,7 +126,7 @@ h1 {
 
   .button__active {
     border: 2px solid #1b262c;
-    transition: 0.5s;
+    transition: 0.3s;
   }
 
   button {
@@ -157,6 +163,9 @@ h1 {
     align-items: center;
     text-decoration: none;
     padding: 30px;
+    color: $primary;
+  }
+  .link:focus {
     color: $primary;
   }
   .link::before {
@@ -282,7 +291,7 @@ h1 {
   &:nth-child(4) {
     height: 1em;
     width: 1.5em;
-    animation-delay: 0.5s;
+    animation-delay: 0.3s;
     filter: blur(3px);
     animation-duration: 13s;
   }
@@ -397,6 +406,7 @@ section {
       font-size: 1rem;
       line-height: 1.5;
       padding: 5%;
+      text-align: center;
     }
     .more_button_plus {
       box-shadow: 2px 2px 5px #616161;
@@ -446,7 +456,7 @@ section {
       position: absolute;
       right: 0;
       z-index: 8;
-      transition: 0.5s;
+      transition: 0.3s;
       border-top: 1px solid #3282b8;
       border-bottom: 1px solid #3282b8;
       border-left: 1px solid #3282b8;
@@ -461,6 +471,7 @@ section {
         font-size: 18px;
         margin: 10px;
         letter-spacing: 1px;
+        outline: none;
       }
     }
 
@@ -469,7 +480,7 @@ section {
       position: absolute;
       right: 0;
       z-index: 8;
-      transition: 0.5s;
+      transition: 0.3s;
       border-top: 1px solid #3282b8;
       border-bottom: 1px solid #3282b8;
       border-left: 0px solid #3282b8;
@@ -482,6 +493,7 @@ section {
         font-size: 18px;
         margin: 10px;
         letter-spacing: 1px;
+        outline: none;
       }
     }
     .buttons {
@@ -514,10 +526,10 @@ section {
     margin: 20px auto;
     border: none;
   }
-  .description {
+  .presentation {
     padding: 10%;
     line-height: 1.5;
-    text-align: justify;
+    text-align: center;
   }
 }
 
@@ -543,11 +555,12 @@ section {
     border: none;
   }
   .form {
-    padding: 1rem;
+    padding-bottom: 5rem;
     fieldset {
       border: $primary 1px solid;
       border-radius: 5px;
-      margin: 0;
+      margin: 0 auto;
+      width: 90%;
       legend {
         padding: 1rem;
         font-size: 1rem;
@@ -588,7 +601,7 @@ section {
   z-index: 0;
   overflow: hidden;
   position: relative;
-  
+
   .text {
     color: white;
     font-size: 1rem;
@@ -602,25 +615,24 @@ section {
     justify-content: space-evenly;
     margin-bottom: 50px;
 
-  .social_link {
-    box-shadow: 0 0 0.25rem #777777;
-    text-decoration: none;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3rem;
-    height: 3rem;
-    z-index: 10;
-    background-color: white;
-  }
+    .social_link {
+      box-shadow: 0 0 0.25rem #777777;
+      text-decoration: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3rem;
+      height: 3rem;
+      z-index: 10;
+      background-color: white;
+    }
 
-
-  .icons {
-    font-size: 1.5rem;
-    color: $primary;
+    .icons {
+      font-size: 1.5rem;
+      color: $primary;
+    }
   }
-}
 }
 
 /* TABLET DEVICE */
@@ -637,8 +649,12 @@ section {
       right: 0;
       background-color: $primary-dark;
       overflow-x: hidden;
-      transition: 0.5s;
+      transition: 0.3s;
       .link:hover {
+        background-color: white;
+        transition: 0.3s;
+      }
+      .link:focus {
         background-color: white;
         transition: 0.3s;
       }
@@ -722,7 +738,7 @@ section {
           content: "";
           width: 30px;
           height: 5px;
-    
+
           background: $primary;
           display: block;
           margin: 10px auto;
@@ -730,7 +746,7 @@ section {
         }
         .description {
           padding: 10%;
-          font-size: 1.2rem;
+          font-size: 1rem;
           line-height: 1.5;
         }
       }
@@ -754,6 +770,7 @@ section {
           font-size: 24px;
           margin: 10px;
           letter-spacing: 1px;
+          outline: none;
         }
       }
 
@@ -769,13 +786,14 @@ section {
         border-radius: 20px 0% 00% 20px;
         width: 0;
         white-space: nowrap;
-        
+
         p,
         a {
           color: $background;
           font-size: 24px;
           margin: 10px;
           letter-spacing: 1px;
+          outline: none;
         }
       }
       .more_button_plus {
@@ -830,17 +848,19 @@ section {
     }
   }
 
-  section{
-    .form{
-      .input{
+  section {
+    .form {
+      .input {
         line-height: 2.5rem;
       }
-      fieldset{
+      fieldset {
+        width: 60%;
         margin: 1rem;
-        legend{
+        margin: 0 auto;
+        legend {
           font-size: 1.5rem;
         }
-        .submit_button{
+        .submit_button {
           padding: 15px;
           border: none;
           background-color: #3282b8;
@@ -852,8 +872,13 @@ section {
           cursor: pointer;
           transition: 0.2s;
         }
-        .submit_button:hover{
-          background-color:whitesmoke;
+        .submit_button:hover {
+          background-color: whitesmoke;
+          color: $primary;
+          transition: 0.2s;
+        }
+        .submit_button:focus {
+          background-color: whitesmoke;
           color: $primary;
           transition: 0.2s;
         }
