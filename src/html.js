@@ -24,6 +24,10 @@ export default function HTML(props) {
         {props.postBodyComponents}
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>AOS.init();</script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-6VBNP2V8F3"
+        ></script>
       </body>
     </html>
   )
