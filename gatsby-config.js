@@ -22,6 +22,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: 'gatsby-source-rest-api',
+      options: {
+        endpoints: [
+          'https://www.codewars.com/api/v1/users/lefernix'
+        ],
+      },
+    },
     `gatsby-plugin-sass`,
     'gatsby-transformer-remark'
     // this (optional) plugin enables Progressive Web App + Offline functionality

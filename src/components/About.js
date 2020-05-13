@@ -1,6 +1,40 @@
 import React from "react"
+import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 
 const About = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allRestApiApiV1UsersLefernix {
+        edges {
+          node {
+            ranks {
+              languages {
+                javascript {
+                  score
+                  name
+                }
+              }
+            }
+            username
+            honor
+          }
+        }
+      }
+      allImageSharp(
+        filter: { fluid: { originalName: { eq: "zcodewars.png" } } }
+      ) {
+        edges {
+          node {
+            id
+            fluid(pngQuality: 10) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
     <section>
       <h1 id="about">A propos</h1>
@@ -12,6 +46,18 @@ const About = () => {
           connaissances, ma motivation et mon dynamisme au sein de votre
           entreprise.
         </p>
+        <div className="codewars">
+          <Img fluid={data.allImageSharp.edges["0"].node.fluid} />
+          {data.allRestApiApiV1UsersLefernix.edges.map((e, index) => (
+            <div className="metrics" key={index}>
+              <p>Username : {e.node.username}</p>
+              <p>Honor : {e.node.honor}</p>
+              <p>JavaScript : {e.node.ranks.languages.javascript.score} pts</p>
+              <p>Rank : {e.node.ranks.languages.javascript.name}</p>
+              {console.log(data)}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

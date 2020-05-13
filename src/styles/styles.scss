@@ -32,7 +32,7 @@ a {
   outline: none;
 }
 
-a:focus{
+a:focus {
   outline: none;
 }
 
@@ -531,6 +531,21 @@ section {
     line-height: 1.5;
     text-align: center;
   }
+  .codewars {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-around;
+    .metrics {
+      text-align: left;
+      font-size: 1rem;
+    }
+    .gatsby-image-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 125px;
+    }
+  }
 }
 
 //Form
@@ -848,6 +863,25 @@ section {
     }
   }
 
+  //About
+
+  section {
+    .codewars {
+      margin-top: 3rem;
+      margin-bottom: 4rem;
+      display: flex;
+      justify-content: center;
+    }
+    .codewars::before{
+      content: 'New !';
+      z-index: 1;
+      font-size: 21px;
+      transform: rotate(-20deg);
+      color: $primary-light;
+    }
+  }
+
+  //Form
   section {
     .form {
       .input {
