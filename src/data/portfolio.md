@@ -5,6 +5,6 @@ description: "Ce portfolio est un dossier personnel numérique que j'ai créé d
 mockup: 'portfolio.png'
 toolsFront: 'HTML5, SCSS,  GatsbyJS, JavaScript'
 toolsBack: 'NodeJS, NoSQL, Docker, Apollo'
-webservice: 'GraphQl'
+webservice: 'GraphQL'
 visiter: https://github.com/lefernix/Portfolio-front
 ---

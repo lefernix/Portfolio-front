@@ -102,11 +102,6 @@ h1 {
     text-transform: uppercase;
   }
 
-  .NavBar__opaque {
-    background-color: var(--background-color);
-    position: relative;
-  }
-
   .logo {
     width: auto;
     height: 3.5rem;
@@ -465,13 +460,24 @@ section {
       height: auto;
       padding-bottom: 5px;
 
-      p,
-      a {
+      p {
         color: $background;
         font-size: 18px;
         margin: 10px;
         letter-spacing: 1px;
         outline: none;
+      }
+      .button_link {
+        background: $primary;
+        padding: 5px 20px 5px 20px;
+        border: none;
+        background-color: #3282b8;
+        color: whitesmoke;
+        border-radius: 5px;
+        margin: 0px 10px 10px;
+        width: auto;
+        cursor: pointer;
+        transition: 0.2s;
       }
     }
 
@@ -487,13 +493,25 @@ section {
       border-radius: 20px 0% 00% 20px;
       width: 0;
       white-space: nowrap;
-      p,
-      a {
+      p {
         color: $background;
         font-size: 18px;
         margin: 10px;
         letter-spacing: 1px;
         outline: none;
+      }
+
+      .button_link {
+        background: $primary;
+        padding: 5px 20px 5px 20px;
+        border: none;
+        background-color: #3282b8;
+        color: whitesmoke;
+        border-radius: 5px;
+        margin: 0px 10px 10px;
+        width: auto;
+        cursor: pointer;
+        transition: 0.2s;
       }
     }
     .buttons {
@@ -527,7 +545,7 @@ section {
     border: none;
   }
   .presentation {
-    padding: 10%;
+    padding: 2% 10% 10% 10%;
     line-height: 1.5;
     text-align: center;
   }
@@ -779,13 +797,22 @@ section {
         height: auto;
         white-space: nowrap;
         padding-bottom: 5px;
-        p,
-        a {
+        p{
           color: $background;
           font-size: 24px;
           margin: 10px;
           letter-spacing: 1px;
           outline: none;
+        }
+        .button_link:hover::after {
+          content: ' →';
+          color: white;
+          transition: 0.2s;
+        }
+        .button_link:focus {
+          content: ' →';
+          color: white;
+          transition: 0.2s;
         }
       }
 
@@ -802,13 +829,23 @@ section {
         width: 0;
         white-space: nowrap;
 
-        p,
-        a {
+        p{
           color: $background;
           font-size: 24px;
           margin: 10px;
           letter-spacing: 1px;
           outline: none;
+        }
+
+        .button_link:hover {
+          background-color: whitesmoke;
+          color: $primary;
+          transition: 0.2s;
+        }
+        .button_link:focus {
+          background-color: whitesmoke;
+          color: $primary;
+          transition: 0.2s;
         }
       }
       .more_button_plus {
@@ -872,8 +909,8 @@ section {
       display: flex;
       justify-content: center;
     }
-    .codewars::before{
-      content: 'New !';
+    .codewars::before {
+      content: "New !";
       z-index: 1;
       font-size: 21px;
       transform: rotate(-20deg);

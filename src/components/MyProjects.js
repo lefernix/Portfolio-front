@@ -60,16 +60,17 @@ const MyProject = () => {
               }
             >
               {<p>Outils front : {project.node.frontmatter.toolsFront}</p>}
-              {<p>Outils Back : {project.node.frontmatter.toolsBack}</p>}
+              {<p>Outils back : {project.node.frontmatter.toolsBack}</p>}
               {<p>Webservice : {project.node.frontmatter.webservice}</p>}
               {project.node.frontmatter?.visiter && (
+                <button className="button_link">
                 <a
                   href={project.node.frontmatter.visiter}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Voir : {project.node.frontmatter.visiter}
-                </a>
+                  Visiter
+                </a></button>
               )}
             </div>
             <div className="buttons">
