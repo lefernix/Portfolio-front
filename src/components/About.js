@@ -1,6 +1,6 @@
-import React from "react"
-import Img from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import Img from 'gatsby-image'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -47,14 +47,13 @@ const About = () => {
           entreprise.
         </p>
         <div className="codewars">
-          <Img fluid={data.allImageSharp.edges["0"].node.fluid} />
+          <Img fluid={data.allImageSharp.edges['0'].node.fluid} />
           {data.allRestApiApiV1UsersLefernix.edges.map((e, index) => (
             <div className="metrics" key={index}>
               <p>Username : {e.node.username}</p>
               <p>Honor : {e.node.honor}</p>
               <p>JavaScript : {e.node.ranks.languages.javascript.score} pts</p>
               <p>Rank : {e.node.ranks.languages.javascript.name}</p>
-              {console.log(data)}
             </div>
           ))}
         </div>

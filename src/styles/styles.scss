@@ -13,8 +13,8 @@ $font: "Open Sans", "Helvetica Neue", -apple-system, BlinkMacSystemFont,
 $white: #fff;
 $off-white: #f2f4f5;
 $primary: #3282b8;
-$primary-light: #bbe1fa;
-$primary-dark: #0f4c75;
+$primary-light: #3282b8;
+$primary-dark: #3282b8;
 $background: #1b262c;
 
 html,
@@ -106,6 +106,9 @@ h1 {
     width: auto;
     height: 3.5rem;
   }
+  .gatsby-image-wrapper {
+    box-shadow: 2px 3px 5px grey;
+  }
 
   .menu_button {
     border: none;
@@ -149,7 +152,7 @@ h1 {
     align-items: center;
     text-decoration: none;
     padding: 30px;
-    color: $primary-light;
+    color: whitesmoke;
   }
 
   .link:hover {
@@ -198,6 +201,7 @@ h1 {
       align-items: center;
       font-size: 48px;
       padding: 10px;
+      text-shadow: 1px 2px 5px #8f8f9a;
     }
     .second-text {
       text-transform: uppercase;
@@ -351,6 +355,7 @@ section {
     text-align: center;
     text-transform: uppercase;
     padding: 2rem;
+    border-top: 1rem #2b4654 solid;
   }
   #projects::after {
     content: "";
@@ -459,28 +464,37 @@ section {
       width: 90vw;
       height: auto;
       padding-bottom: 5px;
-
-      p {
-        color: $background;
-        font-size: 18px;
-        margin: 10px;
-        letter-spacing: 1px;
-        outline: none;
+      align-items: flex-end;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .wrapper_info {
+        p {
+          color: $background;
+          font-size: 18px;
+          margin: 10px;
+          letter-spacing: 1px;
+          outline: none;
+          .title-info {
+            font-weight: 700;
+          }
+        }
       }
-      .button_link {
-        background: $primary;
-        padding: 5px 20px 5px 20px;
-        border: none;
-        background-color: #3282b8;
-        color: whitesmoke;
-        border-radius: 5px;
-        margin: 0px 10px 10px;
-        width: auto;
-        cursor: pointer;
-        transition: 0.2s;
+      .wrapper_button-link {
+        .button_link {
+          background: $primary;
+          padding: 5px 20px 5px 20px;
+          border: none;
+          background-color: #3282b8;
+          color: whitesmoke;
+          border-radius: 5px;
+          margin: 0px 10px 10px;
+          width: auto;
+          cursor: pointer;
+          transition: 0.2s;
+        }
       }
     }
-
     .wrapper_closed {
       background-color: white;
       position: absolute;
@@ -493,25 +507,35 @@ section {
       border-radius: 20px 0% 00% 20px;
       width: 0;
       white-space: nowrap;
-      p {
-        color: $background;
-        font-size: 18px;
-        margin: 10px;
-        letter-spacing: 1px;
-        outline: none;
+      align-items: flex-end;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .wrapper_info {
+        p {
+          color: $background;
+          font-size: 18px;
+          margin: 10px;
+          letter-spacing: 1px;
+          outline: none;
+          .title-info {
+            font-weight: 700;
+          }
+        }
       }
-
-      .button_link {
-        background: $primary;
-        padding: 5px 20px 5px 20px;
-        border: none;
-        background-color: #3282b8;
-        color: whitesmoke;
-        border-radius: 5px;
-        margin: 0px 10px 10px;
-        width: auto;
-        cursor: pointer;
-        transition: 0.2s;
+      .wrapper_button-link {
+        .button_link {
+          background: $primary;
+          padding: 5px 20px 5px 20px;
+          border: none;
+          background-color: #3282b8;
+          color: whitesmoke;
+          border-radius: 5px;
+          margin: 0px 10px 10px;
+          width: auto;
+          cursor: pointer;
+          transition: 0.2s;
+        }
       }
     }
     .buttons {
@@ -590,7 +614,7 @@ section {
   .form {
     padding-bottom: 5rem;
     fieldset {
-      border: $primary 1px solid;
+      border: $primary 2px solid;
       border-radius: 5px;
       margin: 0 auto;
       width: 90%;
@@ -675,12 +699,11 @@ section {
   .NavBar {
     .overlay {
       height: 100%;
-      width: 30%;
+      width: 33%;
       position: fixed;
       z-index: 18;
       top: 0;
       right: 0;
-      background-color: $primary-dark;
       overflow-x: hidden;
       transition: 0.3s;
       .link:hover {
@@ -797,20 +820,28 @@ section {
         height: auto;
         white-space: nowrap;
         padding-bottom: 5px;
-        p{
+        line-height: 2rem;
+        p {
           color: $background;
           font-size: 24px;
           margin: 10px;
           letter-spacing: 1px;
           outline: none;
         }
-        .button_link:hover::after {
-          content: ' →';
+        .button_link::after {
+          content: " →";
           color: white;
-          transition: 0.2s;
+          display: none;
+          opacity: 0;
+          transition: 1s;
+        }
+        .button_link:hover::after {
+          transition: 1s;
+          display: inline;
+          opacity: 1;
         }
         .button_link:focus {
-          content: ' →';
+          content: " →";
           color: white;
           transition: 0.2s;
         }
@@ -828,8 +859,8 @@ section {
         border-radius: 20px 0% 00% 20px;
         width: 0;
         white-space: nowrap;
-
-        p{
+        line-height: 2rem;
+        p {
           color: $background;
           font-size: 24px;
           margin: 10px;
@@ -846,48 +877,6 @@ section {
           background-color: whitesmoke;
           color: $primary;
           transition: 0.2s;
-        }
-      }
-      .more_button_plus {
-        box-shadow: 2px 2px 5px #616161;
-        text-decoration: none;
-        border-radius: 50%;
-        justify-content: center;
-        align-items: center;
-        width: 2rem;
-        height: 2rem;
-        z-index: 8;
-        margin: 6px;
-        border: none;
-        color: $primary;
-        background-color: white;
-        outline: none;
-        cursor: pointer;
-        transition: 0.3s;
-        .svg-inline--fa {
-          transform: rotate(0deg);
-          transition: transform 0.3s linear;
-        }
-      }
-      .more_button_moins {
-        box-shadow: 2px 2px 5px #616161;
-        text-decoration: none;
-        border-radius: 50%;
-        justify-content: center;
-        align-items: center;
-        width: 2rem;
-        height: 2rem;
-        z-index: 8;
-        margin: 6px;
-        border: none;
-        color: white;
-        background-color: $primary;
-        outline: none;
-        transition: 0.3s;
-        cursor: pointer;
-        .svg-inline--fa {
-          transform: rotate(360deg);
-          transition: transform 0.3s linear;
         }
       }
     }
