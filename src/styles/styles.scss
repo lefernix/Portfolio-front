@@ -752,6 +752,18 @@ section {
       }
     }
   }
+
+  //BANNER
+  .Banner {
+    .row {
+      .main-img {
+        .gatsby-image-wrapper {
+          width: 175px;
+        }
+      }
+    }
+  }
+
   //Projects
   section {
     background-color: #1b262c;
