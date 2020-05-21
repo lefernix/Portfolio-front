@@ -485,13 +485,25 @@ section {
           background: $primary;
           padding: 5px 20px 5px 20px;
           border: none;
-          background-color: #3282b8;
           color: whitesmoke;
           border-radius: 5px;
           margin: 0px 10px 10px;
           width: auto;
           cursor: pointer;
           transition: 0.2s;
+        }
+      }
+      .wrapper_button-inprogress {
+        .button_inprogress {
+          background: #ffc108;
+          padding: 5px 20px 5px 20px;
+          border: none;
+          color: whitesmoke;
+          border-radius: 5px;
+          margin: 0px 10px 10px;
+          width: auto;
+          transition: 0.2s;
+          white-space: nowrap;
         }
       }
     }
@@ -535,6 +547,19 @@ section {
           width: auto;
           cursor: pointer;
           transition: 0.2s;
+        }
+      }
+      .wrapper_button-inprogress {
+        .button_inprogress {
+          background: #ffc108;
+          padding: 5px 20px 5px 20px;
+          border: none;
+          color: whitesmoke;
+          border-radius: 5px;
+          margin: 0px 10px 10px;
+          width: auto;
+          transition: 0.2s;
+          white-space: nowrap;
         }
       }
     }

@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-// import Images from '../images'
 import Img from 'gatsby-image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfo } from '@fortawesome/free-solid-svg-icons'
+import { faInfo, faClock } from '@fortawesome/free-solid-svg-icons'
 
 const MyProject = () => {
-  // const data = Images()
   const [currentId, setCurrentId] = useState(null)
   const projects = useStaticQuery(
     graphql`
@@ -64,7 +62,7 @@ const MyProject = () => {
                 {<p><span className="title-info">Outils back :</span> {project.node.frontmatter.toolsBack}</p>}
                 {<p><span className="title-info">Webservice :</span> {project.node.frontmatter.webservice}</p>}
               </div>
-              {project.node.frontmatter.visiter && (
+              {project.node.frontmatter.visiter ? (
                 <div className="wrapper_button-link">
                   <button className="button_link">
                     <a
@@ -75,7 +73,11 @@ const MyProject = () => {
                   Visiter
                     </a></button>
                 </div>
-              )}
+              ) : (<div className="wrapper_button-inprogress">
+                <button disable="true" className="button_inprogress">
+              In progress <FontAwesomeIcon icon={faClock} />
+                </button>
+              </div>)}
             </div>
             <div className="buttons">
               {currentId === project.node.frontmatter.id ? (
