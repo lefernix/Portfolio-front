@@ -934,6 +934,14 @@ section {
       margin-bottom: 4rem;
       display: flex;
       justify-content: center;
+      transition: 0.3s;
+      .codewars-logo {
+        transition: 0.3s;
+      }
+      .codewars-logo:hover {
+        filter: brightness(0.7);
+        transition: 0.3s;
+      }
     }
     .codewars::before {
       content: "New !";

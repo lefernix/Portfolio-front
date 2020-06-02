@@ -28,7 +28,7 @@ const Header = () => {
   `)
   return (
     <nav id="navigation" className="NavBar">
-      <div id="header"><Img fixed={data.allImageSharp.edges['0'].node.fixed} /></div>
+      <div id="header"><a href="#"><Img fixed={data.allImageSharp.edges['0'].node.fixed} /></a></div>
       <button type="button" style={handleMenu ? { position: 'fixed', right: 0, padding: '1rem' } : {}} className="menu_button" onClick={() => handling()}>
         {!handleMenu ? (
           <FontAwesomeIcon icon={faBars} />

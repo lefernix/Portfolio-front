@@ -47,7 +47,9 @@ const About = () => {
           entreprise.
         </p>
         <div className="codewars">
-          <Img fluid={data.allImageSharp.edges['0'].node.fluid} />
+          <a href="https://www.codewars.com/users/lefernix" className="codewars-logo"
+            target="_blank"
+            rel="noopener noreferrer"><Img fluid={data.allImageSharp.edges['0'].node.fluid} /></a>
           {data.allRestApiApiV1UsersLefernix.edges.map((e, index) => (
             <div className="metrics" key={index}>
               <p>Username : {e.node.username}</p>
