@@ -1,6 +1,10 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby'
+// import { TimeLine } from '../components/TimeLine'
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
+import 'react-vertical-timeline-component/style.min.css'
+// import WorkIcon from '@material-ui/icons/Work'
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -40,7 +44,7 @@ const About = () => {
       <h1 id="about">A propos</h1>
       <div className="presentation">
         <p>
-          Jeune développeur web fullstack de 21 ans passionné par l'informatique
+          Jeune développeur web fullstack de 22 ans passionné par l'informatique
           et la création de contenu. En recherche d'opportunités afin de mettre
           en application mes compétences en développement ainsi que mes
           connaissances, ma motivation et mon dynamisme au sein de votre
@@ -59,6 +63,88 @@ const About = () => {
             </div>
           ))}
         </div>
+        <VerticalTimeline>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: '#3282b8', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid  #3282b8' }}
+            date="2014 - 2017"
+            iconStyle={{ background: '#3282b8', color: '#fff' }}
+            // icon={<WorkIcon />}
+          >
+            <h3 className="vertical-timeline-element-title">Baccalauréat</h3>
+            <h4 className="vertical-timeline-element-subtitle">Poitiers(86), France 🇫🇷</h4>
+            <p>
+            BAC technologique spécialité mercatique à Lycée Aliénor d'Aquitaine.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: '#3282b8', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid  #3282b8' }}
+            date="2018 - 2019"
+            iconStyle={{ background: '#3282b8', color: '#fff' }}
+          >
+            <h3 className="vertical-timeline-element-title">Jobs + autodidacte dev</h3>
+            <h4 className="vertical-timeline-element-subtitle">France 🇫🇷</h4>
+            <p>
+      Effectué plusieurs petits travails pour financer l'intégration dans ma futur école, tout en apprenant le developpement web informatique.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: '#3282b8', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid  #3282b8' }}
+            date="2019 - 2020"
+            iconStyle={{ background: '#3282b8', color: '#fff' }}
+            icon={URL}
+          >
+            <h3 className="vertical-timeline-element-title">Etudiant développeur web</h3>
+            <h4 className="vertical-timeline-element-subtitle">Tours(37), France 🇫🇷</h4>
+            <p>
+      Préparation d'un BAC+2 développeur web et web mobile spécialité JavaScript au sein de l'école numérique WildCodeSchool.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--work"
+            contentStyle={{ background: '#3282b8', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid  #3282b8' }}
+            date="2020"
+            iconStyle={{ background: '#3282b8', color: '#fff' }}
+          >
+            <h3 className="vertical-timeline-element-title">Stagiaire développeur fullstack</h3>
+            <h4 className="vertical-timeline-element-subtitle">Tours(37), France 🇫🇷</h4>
+            <p>
+      Stagiaire au sein d'une start'up, pour développer une application de création/gestion de site pour hôtellier.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            contentStyle={{ background: '#3282b8', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid  #3282b8' }}
+            date="2020 - 2021"
+            iconStyle={{ background: '#3282b8', color: '#fff' }}
+          >
+            <h3 className="vertical-timeline-element-title">Etudiant apprenti développeur web avancé</h3>
+            <h4 className="vertical-timeline-element-subtitle">Remote, France 🇫🇷</h4>
+            <p>
+      Préparation d'un BAC+4 développeur et concepteur d'application au sein de l'école numérique WildCodeSchool, en alternance dans la start'up FASST.
+            </p>
+          </VerticalTimelineElement>
+          <VerticalTimelineElement
+            className="vertical-timeline-element--education"
+            contentStyle={{ background: '#3282b8', color: '#fff' }}
+            contentArrowStyle={{ borderRight: '7px solid  #3282b8' }}
+            date="2020 - aujourd'hui"
+            iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+          >
+            <h3 className="vertical-timeline-element-title">Développeur web fullstack</h3>
+            <h4 className="vertical-timeline-element-subtitle">Remote, France 🇫🇷</h4>
+            <p>
+            Apprenti au sein de la start'up FASST, participant à différents projets clients autour de l'assurance collective.
+            </p>
+          </VerticalTimelineElement>
+        </VerticalTimeline>
       </div>
     </section>
   )
