@@ -88,7 +88,7 @@ const About = () => {
             <h3 className="vertical-timeline-element-title">Jobs + autodidacte dev</h3>
             <h4 className="vertical-timeline-element-subtitle">France 🇫🇷</h4>
             <p>
-      Effectué plusieurs petits travails pour financer l'intégration dans ma futur école, tout en apprenant le developpement web informatique.
+      Effectué plusieurs petits travails pour financer l'intégration dans ma future école, tout en apprenant le developpement web informatique.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -115,7 +115,7 @@ const About = () => {
             <h3 className="vertical-timeline-element-title">Stagiaire développeur fullstack</h3>
             <h4 className="vertical-timeline-element-subtitle">Tours(37), France 🇫🇷</h4>
             <p>
-      Stagiaire au sein d'une start'up, pour développer une application de création/gestion de site pour hôtellier.
+      Stagiaire au sein d'une start'up, pour développer une application de création/gestion de site pour hôtelier.
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -139,7 +139,7 @@ const About = () => {
             iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
           >
             <h3 className="vertical-timeline-element-title">Développeur web fullstack</h3>
-            <h4 className="vertical-timeline-element-subtitle">Remote, France 🇫🇷</h4>
+            <h4 className="vertical-timeline-element-subtitle">Angoulême(16), France 🇫🇷</h4>
             <p>
             Apprenti au sein de la start'up FASST, participant à différents projets clients autour de l'assurance collective.
             </p>
