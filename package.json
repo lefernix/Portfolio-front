@@ -31,7 +31,7 @@
     "gatsby-transformer-remark": "^2.8.4",
     "gatsby-transformer-sharp": "^2.4.6",
     "graphql-tag": "^2.10.3",
-    "gsap": "^3.2.6",
+    "gsap": "^3.6.0",
     "node-sass": "^4.14.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
